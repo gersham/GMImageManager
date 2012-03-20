@@ -10,8 +10,8 @@
 #import "GMImageUploadOperationResult.h"
 #import "NSString+URLEncode.h"
 
-@implementation ETImageManager
-static ETImageManager *shared = nil;
+@implementation GMImageManager
+static GMImageManager *shared = nil;
 
 NSString *const ImageUploadCompleteNotification = @"ImageUploadCompleteNotification";
 NSString *const ImageUploadFailedNotification = @"ImageUploadFailedNotification";
@@ -58,7 +58,7 @@ NSString *const ImageUploadFailedNotification = @"ImageUploadFailedNotification"
     
     // Do Operation
     if (url != nil) {        
-        GMImageUploadOperation *op = [ETImageUploadOperation new];
+        GMImageUploadOperation *op = [GMImageUploadOperation new];
         op.url = url;
         op.completion = completion;
         op.delegate = self;

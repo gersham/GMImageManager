@@ -52,7 +52,7 @@
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     
-    self.result = [ETImageUploadOperationResult new];
+    self.result = [GMImageUploadOperationResult new];
 	_result.httpCode = [response statusCode];
 	_result.url = _url;
     _result.completion = _completion;

@@ -28,7 +28,7 @@ typedef void (^ImageOperationCallbackBlock)(GMImageUploadOperationResult *);
 - (void)uploadImage:(UIImage *)image 
                path:(NSString *)path
          parameters:(NSDictionary *)parameters
-         completion:(void (^)(ETImageUploadOperationResult *result))completion;
+         completion:(void (^)(GMImageUploadOperationResult *result))completion;
 
 - (void)uploadImage:(UIImage *)image 
                 url:(NSURL *)url
