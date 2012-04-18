@@ -88,6 +88,14 @@
         _result.error = [NSError errorWithDomain:@"NetworkOperationError" code:_result.httpCode userInfo:errorInfo];
         _result.errorTitle = [_result.error.userInfo objectForKey:NSLocalizedDescriptionKey];
         _result.errorDescription = [_result.error.userInfo objectForKey:NSLocalizedFailureReasonErrorKey];
+        
+    } else if ([response statusCode] == 404) {
+        _result.httpCode = 404;
+        [errorInfo setObject:@"Upload Error" forKey:NSLocalizedDescriptionKey];
+        [errorInfo setObject:responseString forKey:NSLocalizedFailureReasonErrorKey];
+        _result.error = [NSError errorWithDomain:@"NetworkOperationError" code:_result.httpCode userInfo:errorInfo];
+        _result.errorTitle = [_result.error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        _result.errorDescription = [_result.error.userInfo objectForKey:NSLocalizedFailureReasonErrorKey];
 
     } else if (error != nil) {
         [errorInfo setObject:@"Connection Error" forKey:NSLocalizedDescriptionKey];
